@@ -53,7 +53,7 @@ describe '#validate' do
     end
   end
 
-  context "when a question that has an option that is marked as complete_if_selected" do
+  context "when a question has an option marked as complete_if_selected is selected" do
     it "returns true if other questions are not answered" do
       questions = [
         { text: 'q1', options: [{ text: 'an option'}, { text: 'the right option', complete_if_selected: true }] },
@@ -64,7 +64,7 @@ describe '#validate' do
     end
   end
 
-  context "when a question is answered after a choice of complete_if_selected is chosen" do
+  context "when a question is answered after a choice of complete_if_selected is selected" do
     it "returns 'was answered even though a previous response indicated that the questions were complete' for each question answered" do
       questions = [
         { text: 'q1', options: [{ text: 'an option'}, { text: 'the right option', complete_if_selected: true }] },
